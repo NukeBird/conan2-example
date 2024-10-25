@@ -4,13 +4,15 @@ set(PROJECT_NAME cool_project)
 
 project(${PROJECT_NAME})
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
-
 file(GLOB_RECURSE PROJECT_SRC src/*.cpp src/*.hpp src/*.h)
 
+find_package(glm)
+find_package(glfw3)
+find_package(glew)
+find_package(stb)
+
 add_executable(${PROJECT_NAME} ${PROJECT_SRC})
-target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
+target_link_libraries(${PROJECT_NAME} glm::glm glfw GLEW::GLEW stb::stb)
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17 

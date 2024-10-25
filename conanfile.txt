@@ -2,9 +2,16 @@
 #Also you can check libs via https://conan.io/center
 [requires]
 glm/cci.20230113
+glfw/3.4
+glew/2.2.0
+stb/cci.20240531
 
 [options]
 #blah:some_foo=True
 
 [generators]
-cmake
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout
