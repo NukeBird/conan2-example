@@ -2,8 +2,8 @@
 Template for future projects with conan support
 
 ```
-pip install conan==1.57
-mkdir build && cd build
-conan install .. --build=missing
-cmake ..
+pip install conan
+conan profile detect
+conan install . --build=missing
+cmake --preset=conan-default .
 ```
