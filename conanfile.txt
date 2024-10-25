@@ -1,0 +1,10 @@
+#Anything can be here. Look for more libraries via conan search -r=all library_name
+#Also you can check libs via https://conan.io/center
+[requires]
+glm/cci.20230113
+
+[options]
+#blah:some_foo=True
+
+[generators]
+cmake
